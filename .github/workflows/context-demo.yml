@@ -25,7 +25,7 @@ jobs:
           
       - name: Contexto runner
         run: |
-          echo: "Sistema Operativo: ${{runner.os}}
-          echo: "Directorio: ${{runner.temp}}
+          echo: "Sistema Operativo: ${{runner.os}}"
+          echo: "Directorio: ${{runner.temp}}"
 
       
