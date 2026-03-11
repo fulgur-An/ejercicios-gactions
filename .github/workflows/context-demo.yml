@@ -27,5 +27,3 @@ jobs:
         run: |
           echo: "Sistema Operativo: ${{runner.os}}"
           echo: "Directorio: ${{runner.temp}}"
-
-      
