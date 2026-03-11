@@ -22,3 +22,10 @@ jobs:
           echo "Actor: ${{github.actor}}"
           echo "Evento: ${{github.event_name}}"
           echo "Token: ${{github.token}}"
+          
+      - name: Contexto runner
+        run: |
+          echo: "Sistema Operativo: ${{runner.os}}
+          echo: "Directorio: ${{runner.temp}}
+
+      
