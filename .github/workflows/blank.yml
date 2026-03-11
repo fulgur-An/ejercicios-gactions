@@ -1,0 +1,30 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Secrets DEMO
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "Master" branch
+  push:
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # job secrets
+  uso-secrets:
+    
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Usar el secret
+        run: echo "Valor del token ${{secrets.API_TOKEN}}"
+
+      - name: Usar el secret como una variable de entorno
+        env:
+          TOKEN: ${{secrets.API_TOKEN}}
+        run: |
+          echo "El tiken tiene ${echo -n "$TOKEN" | wc -c) carateres"
+          echo "Valor enmascaraado: $TOKEN"
+
