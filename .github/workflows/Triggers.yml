@@ -2,14 +2,14 @@ name: Triggers
 
 on:
   push:
-    branches: [ "main", "realease/**" ] # Cualquier rama que empieze con realease 
+    branches: [ "Master", "realease/**" ] # Cualquier rama que empieze con realease 
     paths:
       - "src/**" # Solo si cambia algo dentro de src
       - "tests/**" # Solo si cambia algo dentro de tests
 
   pull_request:
     branches: 
-      - main
+      - Master
       - realease/**
     paths:
       - "src/**" # Solo si cambia algo dentro de src
