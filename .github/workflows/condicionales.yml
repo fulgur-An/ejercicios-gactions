@@ -1,0 +1,33 @@
+name: Demo Condicionales
+on:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "step 1 - siempre se ejecuta"
+        run: echo "step 1 ok"
+
+      - name: "step 2 - forza un fallo simulado"
+        run: exit 1
+
+      - name: "step 4 - solo si todo es ok (se va a saltar)"
+        if: success()
+        run: echo "este step no se ejecutara por que el step anterior falla
+
+      - name: "step 4 - solo si hubo fallo (si se ejecuta)"
+        if: failure()
+        run: echo "fallo detectado - aqui iria una notificacion"
+
+      - name: "step 5 - siempre corre (cleanup)"
+        if: always()
+        run: echo "limpieza final, siempre se ejecuta"
+
+      - name: "step 6 - solo en la rama master"
+        if: github.ref_name == 'Master'
+        run: echo "este solo en master"
