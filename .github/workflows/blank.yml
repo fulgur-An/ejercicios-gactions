@@ -21,11 +21,6 @@ jobs:
       - name: Usar el secret
         run: echo "Valor del token ${{secrets.API_TOKEN}}"
 
-        
-
-      - name: Usar token
-       run: echo "Valor del token github ${{secrets.GITHUB_TOKEN}}
-
       - name: Usar el secret como una variable de entorno
         env:
           TOKEN: ${{secrets.API_TOKEN}}
